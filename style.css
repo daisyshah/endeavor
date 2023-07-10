@@ -1,0 +1,16 @@
+#wrapper { 
+	display: flex; 
+	justify-content: center; /* center horizontally */ 
+	align-items: center; /* center vertically */ 
+} 
+
+.popup-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 10px;
+    border: 1px solid black;
+    display: none;
+  }
