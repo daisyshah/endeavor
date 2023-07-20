@@ -10,18 +10,14 @@ To explain the game, it is essentially just snake, but adapted to help with the 
 ### index.html
 contains the html with the frame for the game. It also includes javascript for the sidebar that populates with fun facts as the player plays the game. you can change which version of the game is being played by changing the javascript file being used in the canvas here.
 
-### index2.js
-this contains the working game, minus the photo. instead, the user chases our company logo. everything here functions (mostly) properly
+### indexur.js
+contains the working game, minus the photos. instead, the user chases our company logo. everything here functions properly
 
 ### indeximg.js
 my attempt at trying to change when the employee information is selected so that their photo can be used. it does not work.
 
-### temp.csv
-the data used for index2
-
-### temp2.csv
-the same data as temp but including the photoUrl column (doesn't lead to legit images, just two test images)
-
+### tempUR.csv
+randomly generated data for the user research trials
 
 ## used but not super important
 
@@ -38,6 +34,15 @@ self-explanatory tbh but i actually don't think it works LOL i had to add a bunc
 
 ### index.js
 outdated, please ignore
+
+### index2.js
+this contains the working game, minus the photo. instead, the user chases our company logo. everything here functions (mostly) properly
+
+### temp.csv
+the data used for index2. will likely not be used for the final version of this game
+
+### temp2.csv
+the same data as temp but including the photoUrl column (doesn't lead to legit images, just two test images)
 
 ### responses.csv
 OUTDATED: the original employee information being used for this prototype. i cleaned the data in SQL afterwards
