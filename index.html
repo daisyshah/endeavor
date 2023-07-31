@@ -98,9 +98,12 @@
           const popupHistory = [];
 
           // Display onboarding popup
-          function displayOnboardingPopup(employee, question, answer) {
+          function displayOnboardingPopup(employee) {
             const { firstName } = employee;
             const { lastName } = employee;
+            const { question } = employee;
+            const { answer } = employee;
+            
 
             // Create the popup box element
             const popupBox = document.createElement('div');

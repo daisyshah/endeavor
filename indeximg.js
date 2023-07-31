@@ -13,7 +13,7 @@ class snakePart {
 let speed = 7;
 let tileCount = 25;
 
-let tileSize = canvas.clientWidth / tileCount - 2;
+let tileSize = 24;
 let headX = 10;
 let headY = 10;
 
@@ -34,8 +34,18 @@ let score = 0;
 
 let selectedEmployee = [];
 
+// Variable to track if the game is paused
+let isPaused = false;
+
 // create game loop-to continuously update the screen
 function drawGame() {
+
+  if (isPaused) {
+    // If the game is paused, don't update the game state
+    setTimeout(drawGame, 1000 / speed);
+    return;
+  }
+
   changeSnakePosition();
   // game over logic
   let result = isGameOver();
@@ -159,7 +169,7 @@ function displayOnboardingPopup(employee) {
   const firstName = employee.firstName;
   const lastName = employee.lastName;
   const question = employee.question;
-  const answer = employee.question;
+  const answer = employee.answer;
 
   // Create the popup box element
   const popupBox = document.createElement('div');
@@ -234,7 +244,7 @@ function parseCSV(csvData) {
   
 
 function loadCSVFile() {
-  fetch('tempUR.csv')
+  fetch('tempUR.csv') // choose CSV file here
     .then((response) => response.text())
     .then((csvData) => {
       parseCSV(csvData);
@@ -258,6 +268,13 @@ function checkCollision() {
 
     // Display the onboarding popup with the employee's information and the chosen question
     displayOnboardingPopup(selectedEmployee);
+
+    // Pause the game
+    isPaused = true;
+    setTimeout(() => {
+      // Resume the game after a certain duration (adjust the duration as needed)
+      isPaused = false;
+    }, 1500); // Pause for 3 seconds (adjust the duration as needed)
   }
 }
 
@@ -284,7 +301,7 @@ function selectEmployee() {
         lastName: employee.lastName,
         photoUrl: employee.photoUrl,
         question: question,
-        question: answer
+        answer: answer,
       };
       return selectedEmployee;
 }
